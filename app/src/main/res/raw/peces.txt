@@ -1,0 +1,26 @@
+﻿babosa,Babosa,Parabennius rouxi,8,Fondo de roca
+baila,Baila,Dicentrarchus punctatus,35,Pelagicos o de mar abierto
+castanuela,Castañuela ,Chromis chromis,12,Praderas de fanerogamas
+castanuelaalevin,Castañuela alevín ,Chromis chromis,3,Praderas de fanerogamas
+corvallo,Corvallo,Sciaena umbra,40,Praderas de fanerogamas
+doncella,Doncella hembra,Coris julis,12,Praderas de fanerogamas
+espeton,Espeton ,Sphyraena sphyraena,80,Praderas de fanerogamas
+espetonalevin,Espeton alevín ,Sphyraena sphyraena,12,Praderas de fanerogamas
+herrera,Herrera ,Lithognatus mormyrus,25,Fondo arenoso
+mero,Mero,Epinephelus marginatus,60,Fondo de roca
+meroalevin,Mero alevín,Epinephelus marginatus,10,Fondo de roca
+mojarra,Mojarra ,Diplodus vulgaris,25,Fondo de roca
+morena,Morena,Muraena helena,100,Fondo de roca
+oblada,Oblada ,Oblada melanura,25,Praderas de fanerogamas
+pezderoca,Pez de roca ,Parabennius pilicornis,8,Fondo de roca
+pezverde,Pez verde macho ,Thalassoma pavo,12,Praderas de fanerogamas
+pezverdehembra,Pez verde hembra ,Thalassoma pavo,12,Praderas de fanerogamas
+rascacio,Rascacio ,Scorpeana porcus,25,Fondo de roca
+raspallon,Raspallon ,Diplodus annularis,25,Fondo de roca
+reyezuelo,Reyezuelo ,Apogon imbervis,10,Fondo de roca
+salpa,Salpa ,Sarpa salpa,35,Fondo de roca
+sargo,Sargo ,Diplodus sargus,25,Fondo de roca
+sargosoldadooreal,Sargo soldado o real ,Diplous cervinos,25,Fondo de roca
+serrano,Serrano ,Serranus cabrilla,17,Fondo de roca
+tordo,Tordo ,Symphodus tinca,20,Praderas de fanerogamas
+vaquilla,Vaquilla,Serranus scriba,17,Fondo de roca

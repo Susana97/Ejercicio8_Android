@@ -1,0 +1,22 @@
+anemona,Anemona común,anemonajpg,Anemonia sulcata,10,Fondo de roca
+bigaro,Bígaro,bigarojpg,Littorina litorea,2,Fondo de roca
+cangrejocorredor,Cangrejo corredor,cangrejocorredorjpg,Pachygrapsus marmoratus,10,Fondo de roca
+cangrejo,Cangrejo ermitaño,cangrejojpg,Dardanus arrosor,6,Fondo de roca
+Caracola,caracolajpg,,6,Fondo de roca
+coralnaranja,Coral naranja,coralnaranjajpg,Astroides calycularis,50,Fondo de roca
+cystoseira,Cystoseira,cystoseirajpg,Cystoseira mediterranea,20,Fondo de roca
+erizoblanco,Erizo blanco,erizoblancojpg,,12,Fondo de roca
+erizocomun,Erizo común,erizocomunjpg,,8,Fondo de roca
+erizovioleta,Erizo violeta,erizovioletajpg,Sphaerachinus granularis,12,Fondo de roca
+esponja,Esponja,esponjajpg,Ircinia fasciculata,20,Fondo de roca
+estrellaroja,Estrella roja,estrellarojajpg,Echinaster sepositus,30,Fondo de roca
+holoturia,Holoturia,holoturiajpg,Holoturia tubulosa,20,Fondo arenoso
+lapa,Lapa,lapajpg,Patella vulgata,3,Fondo de roca
+lijo,Posidonia,lijojpg,Posidonia oceanica,50,Praderas de fanerogamas
+medusa,Medusa,medusajpg,Pelagia noctiluca,10,Pelagicos o de mar abierto
+medusahuevo,Medusa huevo o aguacuajada,medusahuevojpg,Cotylorihyza tuberculata,20,Pelagicos o de mar abierto
+nacra,Nacra,nacrajpg,Pinna nobilis,60,Praderas de fanerogamas
+ofiura,Ofiura,ofiurajpg,Ophioderma longicaudum,12,Fondo de roca,
+padina,Padina,padinajpg,Padina pavonia,6,Fondo de roca
+pulpo,Pulpo,pulpojpg,Octopus vulgaris,60,Fondo de roca
+tomatedemar,Tomate de mar,tomatejpg,Actinia equina,5,Fondo de roca
