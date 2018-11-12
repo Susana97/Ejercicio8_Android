@@ -1,4 +1,4 @@
-﻿babosa,Babosa,Parabennius rouxi,8,Fondo de roca
+babosa,Babosa,Parabennius rouxi,8,Fondo de roca
 baila,Baila,Dicentrarchus punctatus,35,Pelagicos o de mar abierto
 castanuela,Castañuela ,Chromis chromis,12,Praderas de fanerogamas
 castanuelaalevin,Castañuela alevín ,Chromis chromis,3,Praderas de fanerogamas

@@ -16,10 +16,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private InputStream inputAlgas;
+    private InputStream inputInfo;
     private InputStream inputPeces;
     private BufferedReader br;
     private Spinner opcionesPeces;
@@ -33,42 +34,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        //ACCEDEMOS A LOS FICHEROS.
-        try{
-            inputAlgas = getResources().openRawResource(R.raw.algaseinvertebrados);
-            inputPeces = getResources().openRawResource(R.raw.peces);
-            br = new BufferedReader(new InputStreamReader(inputAlgas));
-            String texto = null;
-            while((texto = br.readLine())!= null){
-                System.out.println(texto + "\n");
-            }
+        //ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
+        ArrayList<InformacionAnimales> informacionAlgas = leerInformacionFichero("algaseinvertebrados");
 
-
-        }catch (Exception e){
-            Log.e("Ficheros", "Error al leer fichero desde recurso Raw");
-        }finally {
-            if(inputAlgas != null){
-                try{
-                    inputAlgas.close();
-                }catch (IOException e){
-                    Log.e("Ficheros", "Error al cerrar");
-                }
-            }
-            if(inputPeces != null){
-                try{
-                    inputPeces.close();
-                }catch (IOException e){
-                    Log.e("Ficheros", "Error al cerrar");
-                }
-            }
-            if(br != null){
-                try{
-                    br.close();
-                }catch (IOException e){
-                    Log.e("Ficheros", "Error al cerrar");
-                }
-            }
-        }
         final String [] opciones = new String[]{"Peces", "Algas e Invertebrados"};
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
         opcionesPeces = (Spinner)findViewById(R.id.spinnerPeces);
@@ -108,5 +76,41 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    public ArrayList<InformacionAnimales> leerInformacionFichero(String fichero){
+        ArrayList<InformacionAnimales> informacion = new ArrayList<InformacionAnimales>();
+
+        try{
+            int resource = getResources().getIdentifier(fichero, "raw", this.getPackageName());
+            inputInfo = getResources().openRawResource(resource);
+            br = new BufferedReader(new InputStreamReader(inputInfo));
+            String texto = null;
+            while((texto = br.readLine())!= null) {
+                String[] lista = texto.split(",");
+                //para parar el ID de la imagen
+                int imagen = getResources().getIdentifier(lista[0], "drawable", this.getPackageName());
+                informacion.add(new InformacionAnimales(imagen, lista[1], lista[2], lista[3], lista[4]));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            //Log.e("Ficheros", "Error al leer fichero desde recurso Raw");
+        }finally {
+            if(inputInfo != null){
+                try{
+                    inputInfo.close();
+                }catch (IOException e){
+                    Log.e("Ficheros", "Error al cerrar");
+                }
+            }
+            if(br != null){
+                try{
+                    br.close();
+                }catch (IOException e){
+                    Log.e("Ficheros", "Error al cerrar");
+                }
+            }
+        }
+        return informacion;
     }
 }

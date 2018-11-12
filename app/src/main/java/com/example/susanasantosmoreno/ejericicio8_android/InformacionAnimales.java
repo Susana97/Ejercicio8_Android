@@ -5,10 +5,10 @@ public class InformacionAnimales {
     private int imagen;
     private String nombreComun;
     private String nombreLatin;
-    private int longitud;
+    private String longitud;
     private String habitat;
 
-    public InformacionAnimales(int imagen, String nombreComun, String nombreLatin, int longitud, String habitat) {
+    public InformacionAnimales(int imagen, String nombreComun, String nombreLatin, String longitud, String habitat) {
         this.imagen = imagen;
         this.nombreComun = nombreComun;
         this.nombreLatin = nombreLatin;
@@ -40,11 +40,11 @@ public class InformacionAnimales {
         this.nombreLatin = nombreLatin;
     }
 
-    public int getLongitud() {
+    public String getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(int longitud) {
+    public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
 
@@ -54,5 +54,16 @@ public class InformacionAnimales {
 
     public void setHabitat(String habitat) {
         this.habitat = habitat;
+    }
+
+    @Override
+    public String toString() {
+        return "InformacionAnimales{" +
+                "imagen=" + imagen +
+                ", nombreComun='" + nombreComun + '\'' +
+                ", nombreLatin='" + nombreLatin + '\'' +
+                ", longitud=" + longitud +
+                ", habitat='" + habitat + '\'' +
+                '}';
     }
 }
