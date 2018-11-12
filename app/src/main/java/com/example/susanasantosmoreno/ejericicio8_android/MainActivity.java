@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private Spinner opcionesPeces;
     private ArrayAdapter<String> adaptador;
     private TextView textViewTitle;
+    private AdaptadorInformacion adaptadorListPeces;
+    private AdaptadorInformacion adaptadorListAlgas;
+    private ListView listaOpciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +38,19 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        //ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
+        ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
+        for(int i=0; i<informacionPeces.size(); i++){
+            System.out.println(informacionPeces.get(i).toString());
+        }
+        System.out.println("--------------------------------------------------------------");
         ArrayList<InformacionAnimales> informacionAlgas = leerInformacionFichero("algaseinvertebrados");
+        for(int j=0; j<informacionAlgas.size(); j++){
+            System.out.println(informacionAlgas.get(j).toString());
+        }
+
+        //USAMOS ADAPTADORES PARA DIBUJAR LAS OPCIONES DE LAS LISTAS.
+        adaptadorListPeces = new AdaptadorInformacion(this, informacionPeces);
+        adaptadorListAlgas = new AdaptadorInformacion(this, informacionAlgas);
 
         final String [] opciones = new String[]{"Peces", "Algas e Invertebrados"};
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
@@ -44,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
         opcionesPeces.setAdapter(adaptador);
 
         textViewTitle = (TextView)findViewById(R.id.textViewTitulo);
+        listaOpciones = (ListView)findViewById(R.id.ListViewPrincipal);
+        //listaOpciones.setAdapter(adaptadorListPeces);
+        listaOpciones.setAdapter(adaptadorListAlgas);
+
         //Acciones del Spiner.
         opcionesPeces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -51,10 +70,32 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String delparque = getResources().getString(R.string.delparque);
                 textViewTitle.setText((opciones[position]).toUpperCase() + " " + delparque);
+                /*if(position == 0){//ESTAMOS EN LA OPCION DE PECES
+
+                    listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        }
+                    });
+                    adaptador.notifyDataSetChanged();
+
+                }else{//ESTAMOS EN LA OPCIÓN DE ALGAS.
+
+                    listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        }
+                    });
+                    adaptador.notifyDataSetChanged();
+                }*/
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent){}
         });
+
+
     }
 
     @Override
