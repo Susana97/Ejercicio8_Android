@@ -1,5 +1,7 @@
 package com.example.susanasantosmoreno.ejericicio8_android;
 
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int SECONDARY_ACTIVITY_TAG = 1;
     private InputStream inputInfo;
     private InputStream inputPeces;
     private BufferedReader br;
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                            
                         }
                     });
                     adaptador.notifyDataSetChanged();
@@ -104,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_settings:
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogoInfo dialogo = new DialogoInfo();
+                dialogo.show(fragmentManager, "tagAlerta");
                 break;
             default:
                 return super.onOptionsItemSelected(item);
