@@ -40,7 +40,7 @@ public class AdaptadorInformacion extends ArrayAdapter<InformacionAnimales> {
             holder = new ViewHolder();
 
             holder.imagen = (ImageView)item.findViewById(R.id.ImagenAnimales);
-            holder.nombreComun = (TextView)item.findViewById(R.id.textViewTitulo);
+            holder.nombreComun = (TextView)item.findViewById(R.id.TituloEspecie);
             holder.nombreLatin = (TextView)item.findViewById(R.id.TituloLatin);
             holder.longitud = (TextView)item.findViewById(R.id.Longitud);
             holder.habitat = (TextView)item.findViewById(R.id.Habitat);
@@ -55,7 +55,7 @@ public class AdaptadorInformacion extends ArrayAdapter<InformacionAnimales> {
         holder.imagen.setImageResource(mielemento.getImagen());
         holder.nombreComun.setText(mielemento.getNombreComun());
         holder.nombreLatin.setText(mielemento.getNombreLatin());
-        holder.longitud.setText(mielemento.getLongitud());
+        holder.longitud.setText(mielemento.getLongitud() + " cm");
         holder.habitat.setText(mielemento.getHabitat());
 
         // Devolvemos la Vista (nueva o reutilizada) que dibuja la opcion

@@ -39,14 +39,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
-        for(int i=0; i<informacionPeces.size(); i++){
-            System.out.println(informacionPeces.get(i).toString());
-        }
-        System.out.println("--------------------------------------------------------------");
         ArrayList<InformacionAnimales> informacionAlgas = leerInformacionFichero("algaseinvertebrados");
-        for(int j=0; j<informacionAlgas.size(); j++){
-            System.out.println(informacionAlgas.get(j).toString());
-        }
+
 
         //USAMOS ADAPTADORES PARA DIBUJAR LAS OPCIONES DE LAS LISTAS.
         adaptadorListPeces = new AdaptadorInformacion(this, informacionPeces);
@@ -60,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         textViewTitle = (TextView)findViewById(R.id.textViewTitulo);
         listaOpciones = (ListView)findViewById(R.id.ListViewPrincipal);
-        //listaOpciones.setAdapter(adaptadorListPeces);
-        listaOpciones.setAdapter(adaptadorListAlgas);
 
         //Acciones del Spiner.
         opcionesPeces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -70,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String delparque = getResources().getString(R.string.delparque);
                 textViewTitle.setText((opciones[position]).toUpperCase() + " " + delparque);
-                /*if(position == 0){//ESTAMOS EN LA OPCION DE PECES
-
+                if(position == 0){//ESTAMOS EN LA OPCION DE PECES
+                    listaOpciones.setAdapter(adaptadorListPeces);
                     listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -81,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     adaptador.notifyDataSetChanged();
 
                 }else{//ESTAMOS EN LA OPCIÓN DE ALGAS.
-
+                    listaOpciones.setAdapter(adaptadorListAlgas);
                     listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -89,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     adaptador.notifyDataSetChanged();
-                }*/
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent){}

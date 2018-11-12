@@ -21,6 +21,8 @@
         android:id="@+id/textViewTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#c5d86d"
         android:fontFamily="@font/andada"
         android:textAlignment="center"
         android:textSize="20dp"
