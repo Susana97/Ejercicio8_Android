@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
-        ArrayList<InformacionAnimales> informacionAlgas = leerInformacionFichero("algaseinvertebrados");
-
+        final ArrayList<InformacionAnimales> informacionPeces = leerInformacionFichero("peces");
+        final ArrayList<InformacionAnimales> informacionAlgas = leerInformacionFichero("algaseinvertebrados");
 
         //USAMOS ADAPTADORES PARA DIBUJAR LAS OPCIONES DE LAS LISTAS.
         adaptadorListPeces = new AdaptadorInformacion(this, informacionPeces);
@@ -70,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
                     listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            
+                            //cuando se hace click se abre la segunda ventana.
+                            String titulo = informacionPeces.get(position).getNombreComun() + "("
+                                    + informacionPeces.get(position).getNombreLatin()  + ")";
+                            lanzarSegundaActividad(this, informacionPeces.get(position).getImagen(), titulo);
                         }
                     });
                     adaptador.notifyDataSetChanged();
@@ -80,7 +82,10 @@ public class MainActivity extends AppCompatActivity {
                     listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                            //cuando se hace click se abre la segunda ventana.
+                            String titulo = informacionAlgas.get(position).getNombreComun() + "("
+                                    + informacionAlgas.get(position).getNombreLatin()  + ")";
+                            lanzarSegundaActividad(this, informacionAlgas.get(position).getImagen(), titulo);
                         }
                     });
                     adaptador.notifyDataSetChanged();
@@ -89,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent){}
         });
-
-
     }
 
     @Override
@@ -152,4 +155,22 @@ public class MainActivity extends AppCompatActivity {
         }
         return informacion;
     }
+
+    public void lanzarSegundaActividad (AdapterView.OnItemClickListener v, int imagen, String texto){
+        Intent i = new Intent(this, MainActivity2.class);
+        i.putExtra("imagen", imagen);
+        i.putExtra("titulo", texto);
+        startActivityForResult(i, SECONDARY_ACTIVITY_TAG);
+        //creamos el intent que lanza la actividad y le pasamos la imagen como
+        //datos extra.
+    }
+
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        Log.v("Result Code:",Integer.toString(resultCode));
+        if(resultCode == RESULT_CANCELED){
+
+        }
+    }*/
+
 }

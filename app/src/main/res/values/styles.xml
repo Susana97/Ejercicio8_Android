@@ -9,4 +9,13 @@
         <item name="android:textColor">#373331</item>
     </style>
 
+    <style name="AppThemeActivity2" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#80ac7b</item>
+        <item name="colorPrimaryDark">#605a56</item>
+        <item name="colorAccent">#373331</item>
+        <item name="android:textColor">#373331</item>
+        <item name="android:colorBackground">#1d2323</item>
+    </style>
+
 </resources>

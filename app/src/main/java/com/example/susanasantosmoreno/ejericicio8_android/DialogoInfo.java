@@ -15,6 +15,7 @@ public class DialogoInfo extends DialogFragment {
 
         builder.setMessage("Creado por Susana Santos Moreno \nNov-2018")
                 .setTitle("Información")
+                .setIcon(R.drawable.ic_launcher)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
