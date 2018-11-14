@@ -10,5 +10,6 @@
         android:id="@+id/ImagenPrincipal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:background="#1d2323"/>
 </android.support.constraint.ConstraintLayout>

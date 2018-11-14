@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/ImagenAnimales"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
         android:layout_weight="1"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
@@ -22,36 +22,45 @@
             android:id="@+id/TituloEspecie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/andada"
             android:text="TITULO"
             android:textAlignment="viewStart"
-            android:textColor="#0c907d"
+            android:textColor="#526f4f"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:background="#80ac7b"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
         <TextView
             android:id="@+id/TituloLatin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/allerta"
             android:text="Nombre en latin"
             android:textAlignment="viewStart"
-            android:textStyle="bold|italic"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"/>
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/Longitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/andada"
             android:text="Longitud"
             android:textAlignment="viewStart"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Habitat"
