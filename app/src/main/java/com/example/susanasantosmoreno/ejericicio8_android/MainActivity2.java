@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -31,7 +29,7 @@ public class MainActivity2 extends AppCompatActivity {
         String habitat = getIntent().getStringExtra("habitat");
         String titulo = nombre + "(" + nombreLatin + ")";
         this.setTitle(titulo);
-        ImageView imagenPrincipal = (ImageView)findViewById(R.id.ImagenPrincipal);
+        TouchImageView imagenPrincipal = (TouchImageView) findViewById(R.id.ImagenPrincipal);
         imagenPrincipal.setImageResource(imagen);
         System.out.println(nombre + nombreLatin + tamanio + habitat );
 
