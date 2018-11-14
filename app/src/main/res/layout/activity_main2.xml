@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <com.example.susanasantosmoreno.ejericicio8_android.TouchImageViewImageView
+    <com.example.susanasantosmoreno.ejericicio8_android.TouchImageView
         android:id="@+id/ImagenPrincipal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

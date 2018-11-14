@@ -172,12 +172,4 @@ public class MainActivity extends AppCompatActivity {
         //datos extra.
     }
 
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        Log.v("Result Code:",Integer.toString(resultCode));
-        if(resultCode == RESULT_CANCELED){
-
-        }
-    }*/
-
 }
